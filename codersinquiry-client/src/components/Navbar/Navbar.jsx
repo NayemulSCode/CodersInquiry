@@ -10,12 +10,6 @@ const Navbar = () => {
                 <Link class='navbar-brand' to='/'>
                     Reduce Fluffy
                 </Link>
-                <form class='d-flex'>
-                    <input class='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
-                    <button class='btn btn-outline-success' type='submit'>
-                        Search
-                    </button>
-                </form>
                 <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                     <span class='navbar-toggler-icon'></span>
                 </button>
@@ -24,11 +18,6 @@ const Navbar = () => {
                         <li class='nav-item'>
                             <Link to="/login" class='nav-link active' aria-current='page' href="/login">
                                 Login
-                            </Link>
-                        </li>
-                        <li class='nav-item'>
-                            <Link class='nav-link' href='/register'>
-                                Register
                             </Link>
                         </li>
                     </ul>

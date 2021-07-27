@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import CustomNavbar from './components/CustomNavbar/CustomNavbar';
 import Footer from './components/Footer/Footer';
+import RegistrationForm from './components/Login/RegistrationForm';
 
 const App = () => {
     return (
@@ -22,7 +23,12 @@ const App = () => {
                 <Route path="/login">
                     <Navbar />
                     <Login />
+                    {/* <RegistrationForm /> */}
                 </Route>
+                <Route path="/register">
+                    <Navbar />
+                    <RegistrationForm />
+                </Route> 
             </Switch>
         </Router>
     );

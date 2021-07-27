@@ -1,25 +1,71 @@
-import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link, useHistory } from 'react-router-dom';
+import Form from './formComponents/Form';
+import Input from './formComponents/Input';
+import MainContainer from './formComponents/MainContainer';
+import PrimaryButton from './formComponents/PrimaryButton';
 import './Login.css';
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from 'yup';
 
-const Login = () => {
+const schema = yup.object().shape({
+    email: yup
+        .string()
+        .email("Email should have correct format")
+        .required("Email is a require field"),
+    password: yup
+        .string()
+        .required('Please Enter your password')
+        .matches(
+            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+        ),
     
+});
+const Login = () => {
+    const [data, setValues] = useState({});
+    const history = useHistory();
+    const {register, handleSubmit, formState:{ errors }} = useForm({
+        defaultValues: {
+            email: data.email,
+            password: data.password,
+        },
+        mode: "onBlur",
+        resolver: yupResolver(schema),
+    });
+    const onSubmit =(data)=>{
+        setValues(data);
+        history.push("/");
+        console.log(data);
+    }
     return (
-        <div className='login_container'>
-            <Form >
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email..." />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password..." />
-                </Form.Group>
-                <Button className="submit-btn" variant="primary" type="submit">
-                    Login
-                </Button>
+        <MainContainer className="login_container">
+            <Typography>Login Now</Typography>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Input 
+                    {...register("email")}
+                    type="text"
+                    label="Email" 
+                    name="email"
+                    error={!!errors.email}
+                    helperText={errors?.email?.message}
+                    required
+                />
+                <Input 
+                    {...register("password")}
+                    type="password"
+                    label="Password" 
+                    name="password"
+                    error={!!errors.password}
+                    helperText={errors?.password?.message}
+                    required
+                /> 
+                <PrimaryButton>Login</PrimaryButton>
             </Form>
-        </div>
+            <Link to="/register" style= {{color:"red"}}>Have no account? register now</Link>
+        </MainContainer>
     );
 };
 
