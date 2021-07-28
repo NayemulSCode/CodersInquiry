@@ -20,6 +20,21 @@ const Navbar = () => {
                                 Login
                             </Link>
                         </li>
+                        <li class='nav-item'>
+                            <Link to="/courses" class='nav-link active' aria-current='page' href="/courses">
+                            Courses
+                            </Link>
+                        </li>
+                        <li class='nav-item'>
+                            <Link to="/blogs" class='nav-link active' aria-current='page' href="/courses">
+                                Blogs
+                            </Link>
+                        </li>
+                        <li class='nav-item'>
+                            <Link to="/topLearners" class='nav-link active' aria-current='page' href="/topLearners">
+                               Top Learners
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -8,6 +8,10 @@ import Navbar from './components/Navbar/Navbar';
 import CustomNavbar from './components/CustomNavbar/CustomNavbar';
 import Footer from './components/Footer/Footer';
 import RegistrationForm from './components/Login/RegistrationForm';
+import Courses from './components/Courses/Courses';
+import Blog from './components/Blog/Blog';
+import TopLearners from './components/TopLearners/TopLearners';
+import AskQuestions from './components/AskQuestion/AskQuestions';
 
 const App = () => {
     return (
@@ -25,10 +29,22 @@ const App = () => {
                     <Login />
                     {/* <RegistrationForm /> */}
                 </Route>
+                <Route path="/askQuestion">
+                    <AskQuestions />
+                </Route>
                 <Route path="/register">
                     <Navbar />
                     <RegistrationForm />
-                </Route> 
+                </Route>
+                <Route path="/courses">
+                    <Courses />
+                </Route>
+                <Route path="/blogs">
+                    <Blog />
+                </Route>
+                <Route path="/topLearners">
+                    <TopLearners />
+                </Route>
             </Switch>
         </Router>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/js.png'
+import logo from '../../images/python.png'
 import { Container } from 'react-bootstrap';
 const blogData = [
     {
