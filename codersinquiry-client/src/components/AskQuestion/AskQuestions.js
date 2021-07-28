@@ -14,9 +14,9 @@ const AskQuestions = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <section className="askQuestion-container">
+            <section>
                 <div className="row d-flex justify-content-center">
-                    <div className="">
+                    <div className="col-md-6">
                         <form onSubmit={handleSubmit(onSubmit)} className="p-5">
                             <input className="form-control mb-3" type="text" placeholder="Enter Title" {...register("title", { required: true })} />
 

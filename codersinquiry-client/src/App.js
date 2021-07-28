@@ -12,6 +12,7 @@ import Courses from './components/Courses/Courses';
 import Blog from './components/Blog/Blog';
 import TopLearners from './components/TopLearners/TopLearners';
 import AskQuestions from './components/AskQuestion/AskQuestions';
+import CourseDetails from './components/Courses/CourseDetails';
 
 const App = () => {
     return (
@@ -22,7 +23,6 @@ const App = () => {
                     {/* customNavbar just for testing purpose */}
                     {/* <CustomNavbar></CustomNavbar> */}
                     <Home />
-                    <Footer />
                 </Route>
                 <Route path="/login">
                     <Navbar />
@@ -39,6 +39,9 @@ const App = () => {
                 <Route path="/courses">
                     <Courses />
                 </Route>
+                <Route path="/courseDetails/:courseId">
+                 <CourseDetails/>
+                </Route>
                 <Route path="/blogs">
                     <Blog />
                 </Route>
@@ -46,6 +49,7 @@ const App = () => {
                     <TopLearners />
                 </Route>
             </Switch>
+            <Footer />
         </Router>
     );
 };

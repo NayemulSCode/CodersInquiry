@@ -1,0 +1,22 @@
+.questionTabs .tabs{
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+    display: flex;    
+}
+
+.tab{
+    
+    border-right: 2px solid #ddd;
+    padding: 5px;
+}
+
+
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40%;
+}

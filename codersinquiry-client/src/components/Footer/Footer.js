@@ -6,6 +6,13 @@ import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brand
 
 const Footer = () => {
     const noNamed = [
+        {name:"Home",link:""},
+        {name:"Courses" ,link:""},
+        {name:"Contact",link:""},
+        {name:"Blog",link:""},        
+        {name:"Terms of Use",link:""},
+        {name:"Privacy Policy",link:""},
+        {name:"FAQ",link:""},
     
     ]
     const myAddress = [
@@ -20,12 +27,20 @@ const Footer = () => {
         {name: "Programming Content" , link: "/ProgrammingContent"}
     
     ]
+
+    const product=[
+        {name: "Teams" , link: "/"},
+        {name: "Talent" , link: "/"},
+        {name: "Advertising" , link: "/"},
+        {name: "Enterprise" , link: "/"},
+    ]
     return (
         <footer className="footer-area clear-both">
             <div className="container pt-5">
                 <div className="row py-5">
-                    <FooterCol key={1} menuTitle={"."} menuItems={noNamed}/>
+                    <FooterCol key={1} menuTitle={"Reduce Fluffy"} menuItems={noNamed}/>
                     <FooterCol key={2} menuTitle="Services" menuItems={services}/>
+                    <FooterCol key={3} menuTitle="Product" menuItems={product}/>
                     <FooterCol key={4} menuTitle="Our Address" menuItems={myAddress}> 
                         <ul className="social-media list-inline">
                             <li className="list-inline-item"><a href="//facebook.com"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
