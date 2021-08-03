@@ -1,0 +1,91 @@
+.question {
+    margin: 5px;
+    padding: 5px;
+    /* border-radius: 8px; */
+    /* background-color: #e5e5e5; */
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.question__col:nth-of-type(1) .question__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question__cardIcon {
+    height: 35px;
+    width: 35px;
+}
+
+.question__card {
+    display: flex;
+    flex-direction: column;
+}
+
+.question__card .question__cardText {
+    font-size: 14px;
+}
+
+.question__voteCount, .question__ansCount, .question__viewsCount {
+    font-size: 24px;
+    color: #2a9d8f;
+}
+
+.question__question {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.question__tags ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.question__tags ul li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 2.5px;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: #4cc9f0;
+    cursor: pointer;
+}
+
+.question__tags ul li:hover {
+    color: #fff;
+    background-color: #47badd;
+}
+
+.question__user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.question__userAbout {
+    text-align: right;
+    font-size: 14px;
+}
+
+.question__userName {
+    color: #4cc9f0;
+}
+
+.question__userName:hover {
+    color: #47badd;
+}
+
+.question__askingTime {
+    font-size: 12px;
+}
+
+.question__userImg {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+}

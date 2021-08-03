@@ -11,6 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import { parsePhoneNumberFromString } from 'libphonenumber-js'
+import axios from 'axios';
 const schema = yup.object().shape({
     firstName: yup
         .string()
@@ -44,6 +45,7 @@ const normalizePhoneNumber =(value)=>{
 }
 const RegistrationForm = () => {
     const [data, setValues] = useState({});
+    const [error, setError] = useState(false);
     const history = useHistory();
     const {register, handleSubmit, watch, formState:{ errors }} = useForm({
         defaultValues: {
@@ -58,7 +60,26 @@ const RegistrationForm = () => {
         resolver: yupResolver(schema),
     });
     const hasPhone = watch("hasPhone", false);
-    const onSubmit =(data)=>{
+    const onSubmit = async(data, e)=>{
+        e.preventDefault(); 
+        setError(false);
+        const user ={
+            ...data
+        }
+        try{
+          fetch('http://localhost:5000/users',{
+            method:"POST",
+            headers: { 
+                "Content-Type": "application/json" 
+            },
+            body: JSON.stringify(user)
+            })
+            .then(res =>{
+                console.log(res)
+            })
+        }catch(err){
+            setError(true);
+        }
         setValues(data);
         history.push("/login");
         console.log(data);

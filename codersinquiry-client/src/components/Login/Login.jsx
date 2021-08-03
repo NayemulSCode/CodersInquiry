@@ -64,7 +64,7 @@ const Login = () => {
                 /> 
                 <PrimaryButton>Login</PrimaryButton>
             </Form>
-            <Link to="/register" style= {{color:"red"}}>Have no account? register now</Link>
+            <Link to="/register">Have no account?<span style= {{color:"red"}}>register now</span></Link>
         </MainContainer>
     );
 };

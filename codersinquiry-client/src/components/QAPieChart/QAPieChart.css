@@ -1,0 +1,10 @@
+.qaPieChart {
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.qaPieChart__chart {
+    margin: auto;
+    /* border: 1px solid black; */
+}

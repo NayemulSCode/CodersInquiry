@@ -1,0 +1,30 @@
+.options__row {
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.options__card {
+    padding: 10px;
+    overflow: hidden;
+}
+
+.options__card h1 {
+    margin-left: 10px;
+}
+
+.options__card:hover .options__cardIcon {
+    color: #4361ee;
+    transition: 0.5s ease;
+}
+
+.options .card {
+    border-radius: 12px;
+}
+
+.options__cardIcon {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    color: #bfc0c0;
+}

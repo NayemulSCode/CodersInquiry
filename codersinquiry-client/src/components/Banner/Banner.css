@@ -1,0 +1,9 @@
+.banner__col:nth-child(1) .banner__colImg {
+    width: 100%;
+}
+
+.banner__col:nth-child(2) {
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #fff;
+    margin: auto;
+}

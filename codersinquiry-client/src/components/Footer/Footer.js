@@ -1,61 +1,89 @@
 import React from 'react';
 import './Footer.css';
-import FooterCol from './FooterCol';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
+import { CgMail } from 'react-icons/cg';
+import { FaFacebookF, FaTwitter, FaRedditAlien, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
-    const noNamed = [
-        {name:"Home",link:""},
-        {name:"Courses" ,link:""},
-        {name:"Contact",link:""},
-        {name:"Blog",link:""},        
-        {name:"Terms of Use",link:""},
-        {name:"Privacy Policy",link:""},
-        {name:"FAQ",link:""},
-    
-    ]
-    const myAddress = [
-        {name: "Mohammadpur-Dhaka-1207" , link: "//google.com/map"},
-        {name: "Bangladesh" , link: "//google.com/map"},
-       
-    ]
-    
-    const services = [
-        {name: "Bangla Programming Q&A" , link: "/BanglaProgrammingQA"},
-        {name: "Blog" , link: "/Blog"},
-        {name: "Programming Content" , link: "/ProgrammingContent"}
-    
-    ]
-
-    const product=[
-        {name: "Teams" , link: "/"},
-        {name: "Talent" , link: "/"},
-        {name: "Advertising" , link: "/"},
-        {name: "Enterprise" , link: "/"},
-    ]
     return (
-        <footer className="footer-area clear-both">
-            <div className="container pt-5">
-                <div className="row py-5">
-                    <FooterCol key={1} menuTitle={"Reduce Fluffy"} menuItems={noNamed}/>
-                    <FooterCol key={2} menuTitle="Services" menuItems={services}/>
-                    <FooterCol key={3} menuTitle="Product" menuItems={product}/>
-                    <FooterCol key={4} menuTitle="Our Address" menuItems={myAddress}> 
-                        <ul className="social-media list-inline">
-                            <li className="list-inline-item"><a href="//facebook.com"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
-                            <li className="list-inline-item"><a href="//google.com"><FontAwesomeIcon className="icon" icon={faGooglePlusG} /></a></li>
-                            <li className="list-inline-item"><a href="//instagram.com"><FontAwesomeIcon className="icon" icon={faInstagram} /></a></li>
-                        </ul>
-                        <div className="mt-5">
-                            <h6>Call now</h6>
-                            <button className="btn btn-primary">01711111111</button>
+        <footer className='footer'>
+            <div className='container pt-5 pb-3'>
+                <div className='row'>
+                    <div className='footer__col col-md-6'>
+                        <h3 className='footer__colHeading mb-3'>Reduce Fluffy</h3>
+                        <p className='pe-5 mb-3'>Reduce Fluffy একটি প্রোগ্রামিং বিষয়ক প্রশ্ন-উত্তর ওয়েবসাইট। প্রোগ্রামিং জগতে যারা নতুন প্রবেশ করছে এবং যারা এই জগতে ইতোমধ্যেই ঘুরাঘুরি করছে তারা যেন শিখতে গিয়ে কিংবা কাজ করতে গিয়ে সমস্যায় পড়ে হতাশ হয়ে প্রোগ্রামিং ছেড়ে না দেয়। বরং কোন এক জায়গায় জিজ্ঞাসা করে সমাধান পেতে পারে সেজন্যই আমরা এই মঞ্চটি তৈরি করেছি।</p>
+                        <div className='footer__socialIcons'>
+                            <a href='#' target='_blank' rel='norefferer noopener'>
+                                <CgMail className='footer__socialIcon' />
+                            </a>
+                            <a href='#'>
+                                <FaFacebookF className='footer__socialIcon' />
+                            </a>
+                            <a href='#'>
+                                <FaTwitter className='footer__socialIcon' />
+                            </a>
+                            <a href='#'>
+                                <FaRedditAlien className='footer__socialIcon' />
+                            </a>
+                            <a href='#'>
+                                <FaYoutube className='footer__socialIcon' />
+                            </a>
                         </div>
-                    </FooterCol>
+                    </div>
+                    <div className='footer__col col-md-3'>
+                        <h6 className='footer__colHeading'>What you can do</h6>
+                        <ul className='footer__colList'>
+                            <li>
+                                <Link to='/' className='footer__colListItem'>
+                                    Find Solution
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/' className='footer__colListItem'>
+                                    Ask Question
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/' className='footer__colListItem'>
+                                    Write Article
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='footer__col col-md-3'>
+                        <h6 className='footer__colHeading'>Developers</h6>
+                        <ul>
+                            <li>
+                                <a href='#' target='_blank' rel='norefferer noopener' className='footer__colListItem'>
+                                    Nayemul Hasan Saheb
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#' className='footer__colListItem'>
+                                    Nurul Absar
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#' className='footer__colListItem'>
+                                    Monsur Alam Rana
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#' className='footer__colListItem'>
+                                    Mohammad Kamrul Hasan
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#' className='footer__colListItem'>
+                                    Mustaque Nadim
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div className="copyRight text-center">
-                    <p>Copyright {(new Date()).getFullYear()} All right reserved by Reduce Fluffy!</p>
-                </div>
+                <p className='footer__copyright pt-4'>
+                    &copy; {new Date().getFullYear()} All rights reserved by <Link to='/developers'>Endgame Heroes</Link>
+                </p>
             </div>
         </footer>
     );

@@ -1,0 +1,27 @@
+.topVotedQuestion {
+    border-radius: 12px;
+    padding: 10px 10px 10px 20px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.topVotedQuestion__list {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.topVotedQuestion__question {
+    z-index: 3;
+}
+
+.topVotedQuestion__icon {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    color: #bfc0c0;
+    z-index: 2;
+}
