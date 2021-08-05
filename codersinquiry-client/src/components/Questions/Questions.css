@@ -3,3 +3,13 @@
     background-color: #fff;
     border-radius: 12px;
 }
+
+.questions__btn {
+    color: #fff;
+    background-color: #4361ee;
+}
+
+.questions__btn:hover {
+    color: #fff;
+    background-color: #3f37c9;
+}

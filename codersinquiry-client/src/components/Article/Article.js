@@ -19,7 +19,7 @@ const Article = () => {
                     {/* <textarea placeholder="Write your article ..." type="text" className="writeInput writeText" > </textarea> */}
                    <div className="writeInput writeText">
                    <RichTextEditor></RichTextEditor>
-                   </div>                    
+                   </div>
                 </div>
                 <button className="writeSubmit">Publish</button>
             </form>

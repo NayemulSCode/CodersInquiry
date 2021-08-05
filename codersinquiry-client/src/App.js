@@ -9,12 +9,14 @@ import RegistrationForm from './components/Login/RegistrationForm';
 import Courses from './components/Courses/Courses';
 import Blog from './components/Blog/Blog';
 import TopLearners from './components/TopLearners/TopLearners';
-import AskQuestions from './components/AskQuestion/AskQuestions';
+import AskQuestion from './components/AskQuestion/AskQuestion';
 import CourseDetails from './components/Courses/CourseDetails';
 import Footer from './components/Footer/Footer';
-import WriteArticle from './components/WriteArticle/WriteArticle';
+// import WriteArticle from './components/WriteArticle/WriteArticle';
+import Questions from './components/Questions/Questions';
 import QuestionDetail from './components/QuestionDetail/QuestionDetail';
 import Article from './components/Article/Article';
+import WriteArticle from './components/WriteArticle/WriteArticle';
 
 const App = () => {
     return (
@@ -26,21 +28,25 @@ const App = () => {
                     <Home />
                     <Footer />
                 </Route>
+                <Route path='/questions'>
+                    <Questions />
+                </Route>
                 <Route path='/login'>
                     <Navbar />
                     <Login />
                     {/* <RegistrationForm /> */}
                 </Route>
                 <Route path='/askQuestion'>
-                    <AskQuestions />
+                    <AskQuestion />
                 </Route>
                 <Route path='/questionDetail'>
                     <Navbar />
                     <QuestionDetail />
                     <Footer />
                 </Route>
-                <Route path='/Article'>
-                    <Article />
+                <Route path='/writeArticle'>
+                    <WriteArticle />
+                    {/* <Article /> */}
                 </Route>
                 <Route path='/register'>
                     <Navbar />

@@ -24,19 +24,19 @@ const Navbar = () => {
                                 Tags
                             </li>
                         </Link>
-                        <Link to='/courses' className='nav-item'>
+                        {/* <Link to='/courses' className='nav-item'>
                             <li className='nav-link'>
                                 Courses
                             </li>
-                        </Link>
+                        </Link> */}
                         <Link className='nav-item'>
                             <li to='/blogs' className='nav-link'>
-                                Blogs
+                                Articles
                             </li>
                         </Link>
                         <Link className='nav-item'>
                             <li to='/topLearners' className='nav-link'>
-                                Top Learners
+                                Leaderboard
                             </li>
                         </Link>
                         <Link to='/login' className='nav-item'>

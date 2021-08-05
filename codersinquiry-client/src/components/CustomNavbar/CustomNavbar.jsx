@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 import './CustomNavbar.css';
+import times from '../../images/times.png';
+import navbar from '../../images/navbar.png';
 const customStyles = {
     content: {
-        top: '50%',
+        top: '53%',
         left: '155px',
         right: 'auto',
         width: '310px',
@@ -32,38 +34,41 @@ const CustomNavbar = () => {
 
     return (
         <div>
-            <div className='custom-navbar-container' style={{ borderRadius: '5px', padding: '5px' }}>
+            <div className='custom-navbar-container' >
                 {' '}
-                <button onClick={openModal} style={{ borderRadius: '8px' }}>
-                    <i style={{ width: '50px' }} className='fa fa-align-justify' aria-hidden='true'></i>
+                <button onClick={openModal} style={{border: 'none'}}>
+                <img src={navbar} alt="" style={{width: '70px'}}/>
                 </button>
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel='Example Modal'>
                 <div style={{ float: 'left', paddingBottom: '40px', paddingTop: '0' }}>
-                    <button onClick={closeModal} style={{ border: 'none', paddingTop: '1px', textShadow: '2px 4px white' }}>
-                        <i className='fa fa-times mh-100 w-100 h-100' aria-hidden='true'></i>
+                    <button onClick={closeModal} style={{ border: 'none'}}>
+                        <img src={times} alt="" style={{width: '35px', border: 'none'}} />
                     </button>
                 </div>
                 <div style={{ marginTop: '50px' }}>
                     <form>
-                        <Link to='/courses' className='text-decorations'>
-                            <li className='common-feature'>Courses</li>
+                        <Link to='/' className='text-decorations'>
+                            <li className='common-feature'>Home</li>
                         </Link>
-                        <Link to='/blogs' className='text-decorations'>
-                            <li className='common-feature'>Blog</li>
+                        <Link to='/questions' className='text-decorations'>
+                            <li className='common-feature'>Question</li>
                         </Link>
-                        <Link to='/playground' className='text-decorations'>
+                        <Link to='' className='text-decorations'>
+                            <li className='common-feature'>Tags</li>
+                        </Link>
+                        <Link to='' className='text-decorations'>
+                            <li className='common-feature'>Articles</li>
+                        </Link>
+                        <Link to='/topLearners' className='text-decorations'>
+                            <li className='common-feature'>Leaderboard</li>
+                        </Link>
+                        <Link to='' className='text-decorations'>
                             <li className='common-feature'>Code Playground</li>
                         </Link>
-                        <Link to='/discuss' className='text-decorations'>
-                            <li className='common-feature'>Discuss</li>
-                        </Link>
-                        <Link to='/getPro' className='text-decorations'>
-                            <li className='common-feature'>Get Pro</li>
-                        </Link>
-                        <Link to='/login' className='text-decorations' style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <li className='common-feature'>LogIn</li>
-                            <li className='common-feature'>Register</li>
+                        <Link className='text-decorations' style={{ display: 'flex', justifyContent: 'space-around' }}>
+                            <Link to="/login" className='common-feature'>LogIn</Link>
+                            <Link to="/register" className='common-feature'>Register</Link>
                         </Link>
                     </form>
                 </div>

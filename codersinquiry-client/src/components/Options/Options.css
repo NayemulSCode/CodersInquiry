@@ -3,8 +3,13 @@
 }
 
 .options__card {
+    color: #36393d;
     padding: 10px;
     overflow: hidden;
+}
+
+.options__card:hover {
+    color: #36393d;
 }
 
 .options__card h1 {

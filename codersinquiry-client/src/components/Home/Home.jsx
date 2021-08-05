@@ -1,16 +1,18 @@
 import React from 'react';
 import './Home.css';
-import Header from '../Header/Header';
 import Options from '../Options/Options';
 // import Main from './Main/Main';
 import Questions from '../Questions/Questions';
 import QAPieChart from '../QAPieChart/QAPieChart';
 import TopVotedQuestion from '../TopVotedQuestion/TopVotedQuestion';
+import Navbar from '../Navbar/Navbar';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <div className='home'>
-            <Header />
+            <Navbar />
+            <Banner />
             <div className='container my-3'>
                 <Options />
                 <div className='row'>

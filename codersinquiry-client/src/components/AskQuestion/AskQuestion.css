@@ -1,9 +1,9 @@
-.writeArticle__btn {
+.askQuestion__btn {
     background-color: #4361ee;
     color: #fff;
 }
 
-.writeArticle__btn:hover {
+.askQuestion__btn:hover {
     color: #fff;
     background-color: #3f37c9;
 }

@@ -35,3 +35,16 @@
     margin-left: 10px;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 768px){
+    .answers {
+        height: 100%;
+        margin:20px 8%;
+        border: 2px solid #4e59f3;
+        padding: 20px;
+        border-radius:5px;
+    }
+    .answered_author {
+        margin-top: 20px;
+    }
+}
