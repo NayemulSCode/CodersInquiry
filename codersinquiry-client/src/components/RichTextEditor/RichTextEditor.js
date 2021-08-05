@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Editor, EditorState, RichUtils, getDefaultKeyBinding} from 'draft-js';
 import './RichTextEditor.css';
 import '../../../node_modules/draft-js/dist/Draft';

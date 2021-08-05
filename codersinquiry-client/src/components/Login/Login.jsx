@@ -9,6 +9,7 @@ import PrimaryButton from './formComponents/PrimaryButton';
 import './Login.css';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
+import { useEffect } from 'react';
 
 const schema = yup.object().shape({
     email: yup
@@ -26,6 +27,7 @@ const schema = yup.object().shape({
 });
 const Login = () => {
     const [data, setValues] = useState({});
+    const [error, setError] = useState(false);
     const history = useHistory();
     const {register, handleSubmit, formState:{ errors }} = useForm({
         defaultValues: {
@@ -35,11 +37,24 @@ const Login = () => {
         mode: "onBlur",
         resolver: yupResolver(schema),
     });
-    const onSubmit =(data)=>{
-        setValues(data);
-        history.push("/");
-        console.log(data);
+    const onSubmit =(data, e )=>{
+        e.preventDefault()
+       setError(false);
+        // console.log(data);
+       
+        fetch('http://localhost:5000/user')
+        .then(res => res.json())
+        .then( result =>{
+            const user = result.filter( user => user.email === data.email && user.password === data.password);
+            setValues(user[0]);
+            console.log(user);
+            
+            localStorage.setItem('user', JSON.stringify(user[0]));
+            user? history.push("/") : setError(true);
+            
+        })
     }
+   
     return (
         <MainContainer className="login_container">
             <Typography>Login Now</Typography>
@@ -53,6 +68,7 @@ const Login = () => {
                     helperText={errors?.email?.message}
                     required
                 />
+                {error && <p>wrong user or passer</p>}
                 <Input 
                     {...register("password")}
                     type="password"
