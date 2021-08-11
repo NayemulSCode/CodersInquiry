@@ -3,7 +3,7 @@ import './AskQuestion.css';
 import { useForm } from 'react-hook-form';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-
+import ReCAPTCHA from "react-google-recaptcha";
 const AskQuestion = () => {
     const {
         register,
@@ -14,11 +14,15 @@ const AskQuestion = () => {
         console.log(data);
     };
 
+    const onChange = (value) => {
+        console.log("Captcha value:", value);
+      }
+
     return (
         <div className='askQuestion'>
             <Navbar />
             <div className='container'>
-                <h2 className='askQuestion__head fw-bold my-3'>Ask a Question</h2>
+                <h2 className='askQuestion__head fw-bold my-3' data-testid="question">Ask a Question</h2>
                 <div className='row my-3'>
                     <div className='col-md-9 mb-3'>
                         <form onSubmit={handleSubmit(onSubmit)} className='card p-3'>
@@ -49,6 +53,10 @@ const AskQuestion = () => {
                                 <input type='text' className='form-control' id='askQuestionTags' placeholder='প্রশ্ন/সমস্যার ট্যাগ যুক্ত করুন...' {...register('tags', { required: true })} />
                                 {errors.tags && <span className='text-danger'>প্রশ্ন/সমস্যার ট্যাগ যুক্ত করা আবশ্যক</span>}
                             </div>
+                            <ReCAPTCHA
+                             sitekey=""
+                              onChange={onChange}
+                             />,
                             <button type="submit" class="btn askQuestion__btn">Post your Question</button>
                         </form>
                     </div>

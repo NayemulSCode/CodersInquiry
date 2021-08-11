@@ -8,7 +8,7 @@ const Main = () => {
     return (
         <div className="main_content">
             <Link to="/askQuestion">
-                <button type="button" class="btn btn-secondary btn-lg">Ask Question</button>
+                <button data-testid="main" type="button" class="btn btn-secondary btn-lg">Ask Question</button>
             </Link>
             <h1>Q&A Discussions</h1>
             <MenuBar></MenuBar>

@@ -60,7 +60,7 @@ const RegistrationForm = () => {
     const onSubmit = async (data, e) => {
         e.preventDefault();
         setError(false);
-<<<<<<< HEAD
+
         const user ={
             ...data
         }
@@ -79,7 +79,7 @@ const RegistrationForm = () => {
                 }
             })
         }catch(err){
-=======
+
         const user = {
             ...data,
         };
@@ -94,7 +94,7 @@ const RegistrationForm = () => {
                 console.log(res);
             });
         } catch (err) {
->>>>>>> 439509855f452c3858fec59ca068788b93ca4e5d
+
             setError(true);
             console.log(error)
         }
@@ -102,7 +102,7 @@ const RegistrationForm = () => {
         history.push('/login');
         console.log(data);
     };
-
+}
     return (
         <MainContainer className='login_container'>
             <Typography>Register Now</Typography>

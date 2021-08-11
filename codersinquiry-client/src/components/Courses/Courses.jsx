@@ -71,7 +71,7 @@ const Courses = () => {
 
 
     return (
-        <Container className="course-container">
+        <Container className="course-container" courses-id="courses-id">
         <h2 className="text-center m-5">What would you like to learn?</h2>
         <div className="course-data-container">
             {

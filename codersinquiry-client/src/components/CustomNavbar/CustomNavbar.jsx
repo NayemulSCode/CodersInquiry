@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './CustomNavbar.css';
 import times from '../../images/times.png';
 import navbar from '../../images/navbar.png';
+import { CgMenu } from "react-icons/cg";
+import {IoReorderFourSharp } from "react-icons/io5";
 const customStyles = {
     content: {
         top: '53%',
@@ -35,15 +37,17 @@ const CustomNavbar = () => {
     return (
         <div>
             <div className='custom-navbar-container' >
+                <h1 data-testid="header">Home component</h1>
                 {' '}
                 <button onClick={openModal} style={{border: 'none'}}>
-                <img src={navbar} alt="" style={{width: '70px'}}/>
+                {/* <img src={navbar} alt="" style={{width: '70px'}}/> */}
+                <CgMenu style={{ width: '60px', height: '50px'}}/>
                 </button>
             </div>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel='Example Modal'>
                 <div style={{ float: 'left', paddingBottom: '40px', paddingTop: '0' }}>
                     <button onClick={closeModal} style={{ border: 'none'}}>
-                        <img src={times} alt="" style={{width: '35px', border: 'none'}} />
+                        <img src={times} alt="" style={{width: '45px', border: 'none'}} />
                     </button>
                 </div>
                 <div style={{ marginTop: '50px' }}>
