@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import {BiUserCircle} from 'react-icons/bi';
 
 const Navbar = () => {
     return (
@@ -24,11 +25,11 @@ const Navbar = () => {
                                 Tags
                             </li>
                         </Link>
-                        {/* <Link to='/courses' className='nav-item'>
+                        <Link to='/dashBoard' className='nav-item'>
                             <li className='nav-link'>
-                                Courses
+                                Dashboard
                             </li>
-                        </Link> */}
+                        </Link>
                         <Link className='nav-item'>
                             <li to='/' className='nav-link'>
                                 Articles
@@ -47,6 +48,11 @@ const Navbar = () => {
                         <Link to='/register' className='nav-item'>
                             <li className='nav-link'>
                                 Register
+                            </li>
+                        </Link>
+                        <Link to='/user/profile' className='nav-item'>
+                            <li className='nav-link'>
+                                <BiUserCircle />
                             </li>
                         </Link>
                     </ul>

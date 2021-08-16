@@ -60,49 +60,32 @@ const RegistrationForm = () => {
     const onSubmit = async (data, e) => {
         e.preventDefault();
         setError(false);
-
-        const user ={
-            ...data
-        }
-        try{
-          fetch('http://localhost:5000/users',{
-            method:"POST",
-            headers: { 
-                "Content-Type": "application/json" 
-            },
-            body: JSON.stringify(user)
-            })
-            .then(res => res.json())
-            .then(data =>{
-                if(data){
-                    alert("Your Registration Successfully Done!");
-                }
-            })
-        }catch(err){
-
         const user = {
             ...data,
         };
         try {
-            fetch('http://localhost:5000/users', {
+            fetch('https://fierce-hollows-24915.herokuapp.com/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(user),
-            }).then((res) => {
-                console.log(res);
-            });
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data) {
+                        alert('Your Registration Successfully Done!');
+                    }
+                });
         } catch (err) {
-
             setError(true);
-            console.log(error)
+            console.log(error);
         }
         setValues(data);
         history.push('/login');
         console.log(data);
     };
-}
+
     return (
         <MainContainer className='login_container'>
             <Typography>Register Now</Typography>
